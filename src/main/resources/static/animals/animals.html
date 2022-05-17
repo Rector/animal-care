@@ -1,0 +1,33 @@
+<h3>All Animals</h3>
+
+<p></p>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Type</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Age</th>
+        <th scope="col">Condition</th>
+        <th scope="col">Description</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+<!--    todo добавить при пагинации-->
+<!--    <tr ng-repeat="animal in animalsPage.content">-->
+    <tr ng-repeat="animal in animalsPage">
+        <td>{{animal.id}}</td>
+        <td>{{animal.type}}</td>
+        <td>{{animal.name}}</td>
+        <td>{{animal.gender}}</td>
+        <td>{{animal.age}}</td>
+        <td>{{animal.condition}}</td>
+        <td>{{animal.description}}</td>
+        <td>
+          <button class="btn btn-outline-primary" ng-click="showProfileAnimal(animal.id)">See profile animal</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
