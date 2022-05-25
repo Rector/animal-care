@@ -8,12 +8,15 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import static ru.kir.animal.care.utils.Settings.TOKEN_LIFETIME;
 
 @Component
 public class JwtTokenUtil {
@@ -29,7 +32,7 @@ public class JwtTokenUtil {
         claims.put("roles", rolesList);
 
         Date issuedDate = new Date();
-        Date expiredDate = new Date(issuedDate.getTime() + 20 * 60 * 1000);
+        Date expiredDate = new Date(issuedDate.getTime() + TOKEN_LIFETIME);
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(userDetails.getUsername())

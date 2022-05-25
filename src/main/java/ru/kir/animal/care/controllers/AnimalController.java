@@ -3,11 +3,9 @@ package ru.kir.animal.care.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.kir.animal.care.dtos.AnimalDto;
-import ru.kir.animal.care.models.Animal;
 import ru.kir.animal.care.services.AnimalService;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,7 +20,12 @@ public class AnimalController {
 
     @GetMapping("/{id}")
     public AnimalDto getAnimalById(@PathVariable Long id){
-        Animal animal =  animalService.findAnimalById(id).orElseThrow(() -> new NoSuchElementException("Animal for ID: " + id + " not found"));
-        return new AnimalDto(animal);
+        return animalService.findAnimalById(id);
+    }
+
+    @PostMapping
+    public void addNewAnimal(@RequestBody AnimalDto animalDto){
+        animalService.addNewAnimal(animalDto);
+//        return animalDto;
     }
 }

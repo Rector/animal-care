@@ -16,6 +16,14 @@
                 templateUrl: 'profile_animal/profile_animal.html',
                 controller: 'profileAnimalController'
             })
+            .when('/add_animal', {
+                templateUrl: 'add_animal/add_animal.html',
+                controller: 'addAnimalController'
+            })
+            .when('/users/register', {
+                templateUrl: 'registration/registration_form.html',
+                controller: 'registrationFormController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -55,6 +63,10 @@ angular.module('app').controller('indexController', function ($scope, $http, $lo
     $scope.tryToLogout = function () {
         $scope.clearUser();
         $location.path('/');
+    };
+
+    $scope.goToRegistrationForm = function () {
+        $location.path('/users/register');
     };
 
     $scope.isUserLoggedIn = function () {

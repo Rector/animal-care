@@ -1,0 +1,30 @@
+<h3>Add new animal</h3>
+
+<form ng-submit="tryToAddAnimal()">
+    <div class="form-group">
+        <label for="inputType">Type</label>
+        <input class="form-control" id="inputType" placeholder="Enter type animal" ng-model="addAnimal.type" type="text">
+    </div>
+    <div class="form-group">
+        <label for="inputName">Name</label>
+        <input class="form-control" id="inputName" placeholder="Enter name animal" ng-model="addAnimal.name" type="text">
+    </div>
+    <div class="form-group">
+        <label for="inputGender">Gender</label>
+        <input class="form-control" id="inputGender" placeholder="Enter gender animal" ng-model="addAnimal.gender" type="text">
+    </div>
+    <div class="form-group">
+        <label for="inputAge">Age</label>
+        <input class="form-control" id="inputAge" placeholder="Enter age animal" ng-model="addAnimal.age" type="number">
+    </div>
+    <div class="form-group">
+        <label for="inputCondition">Condition</label>
+        <input class="form-control" id="inputCondition" placeholder="Enter condition animal" ng-model="addAnimal.condition" type="text">
+    </div>
+    <div class="form-group">
+        <label for="inputDescription">Description</label>
+        <input class="form-control" id="inputDescription" placeholder="Enter description animal" ng-model="addAnimal.description" type="text">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add animal</button>
+</form>

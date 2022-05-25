@@ -25,7 +25,10 @@
                         <a class="nav-link" href="#!/" style="font-weight: bold;">Animal Care</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!/animals">All Animals</a>
+                        <a class="nav-link" href="#!/animals">All animals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!/add_animal">Add new animal</a>
                     </li>
                     <li class="nav-item" ng-show="!isUserLoggedIn()">
                         <form class="align-middle" ng-submit="tryToAuth()">
@@ -44,13 +47,17 @@
                         </form>
                     </li>
                     <li class="nav-item" ng-show="isUserLoggedIn()">
-                        <button class="btn btn-outline-secondary" ng-click="tryToLogout()">Logout</button>
+                        <button class="btn btn-primary" ng-click="tryToLogout()">Logout</button>
                     </li>
                     <li>
                         <div class="col-sm-10">
                             <label class="col-sm-2 col-form-label" ng-show="isUserLoggedIn()">{{userLoginShow}}</label>
                         </div>
                     </li>
+                    <li class="nav-item" ng-show="!isUserLoggedIn()">
+                        <button class="btn btn-danger" ng-click="goToRegistrationForm()">Sign up</button>
+                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -62,6 +69,8 @@
     <script src="index.js"></script>
     <script src="animals/animals.js"></script>
     <script src="profile_animal/profile_animal.js"></script>
+    <script src="registration/registration_form.js"></script>
+    <script src="add_animal/add_animal.js"></script>
 </div>
 </body>
 </html>
